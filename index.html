@@ -104,27 +104,27 @@
               <div class="space-y-2 py-6">
                 <a
                   href="#inicio"
-                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-orange hover:"
                   >inicio</a
                 >
                 <a
-                  href="#detalles"
-                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  href="#servicios"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-orange hover:"
                   >servicios</a
                 >
                 <a
-                  href="#rsvp"
-                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
-                  >galería</a
+                  href="#nosotros"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-orange hover:"
+                  >nosotros</a
                 >
                 <a
-                  href="#nosotros"
-                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  href="#preguntas"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-orange hover:"
                   >preguntas</a
                 >
                 <a
-                  href="#galeria"
-                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  href="#contacto"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-orange hover:"
                   >contacto</a
                 >
               </div>
@@ -140,23 +140,61 @@
       class="relative grid grid-row min-h-svh bg-no-repeat bg-center bg-cover bg-fixed text-offWhite px-6 py-24 sm:py-32 lg:px-8"
     >
       <div class="min-h-svh absolute inset-0 bg-black/75 z-0"></div>
-      <div class="absolute m-6 z-10">
+      <div class="absolute m-6 z-10 hidden md:block fadeIn-on-scroll opacity-0">
         <img class="h-10" src="/images/logo_2.png" alt="" />
       </div>
       <div
-        class="flex justify-center flex-col text-6xl items-center text-center uppercase font-bold z-10 fadeIn-on-scroll"
+        class="flex justify-center flex-col text-4xl md:text-6xl items-center text-center uppercase font-bold z-10 fadeIn-on-scroll"
       >
         <h1>¿Dónde estamos?</h1>
-        <h1>Donde usted nos <span class="text-orange">necesite</span></h1>
-        <button class="m-4">
-          <a href="#contacto" class="p-4 bg-orange text-4xl uppercase"
+        <h1>
+          Donde usted nos <span class="text-orange italic">necesite</span>
+        </h1>
+        <button class="m-6">
+          <a
+            href="#contacto"
+            class="p-4 bg-orange text-2xl md:text-4xl uppercase"
             >Contáctanos</a
           >
         </button>
       </div>
+
+      <!-- Modal Structure -->
+      <div
+        id="modal"
+        class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 fadeIn-on-scroll opacity-0"
+      >
+        <div class="relative bg-white p-6 rounded-lg max-w-lg w-full m-4">
+          <!-- Modal Content -->
+          <h2 class="text-xl font-bold mb-4 text-blue">
+            ¡Participa en nuestro sorteo!
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Completa el formulario de contacto y sigue nuestra página en
+            Facebook para participar por un vaso térmico y una gorra exclusivos.
+          </p>
+          <!-- Button to go to contact form -->
+          <button
+            id="goToContactForm"
+            class="bg-orange text-white p-3 rounded-lg uppercase w-full text-center mb-4"
+          >
+            Ir al formulario
+          </button>
+          <!-- Close Button -->
+          <button
+            id="closeModal"
+            class="absolute top-2 right-2 text-black bg-gray-300 rounded-full px-2"
+          >
+            X
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="bg-blue hidden md:block" id="navWrapper">
+    <div
+      class="bg-blue hidden md:block fadeIn-on-scroll opacity-0"
+      id="navWrapper"
+    >
       <div id="navbar">
         <nav
           class="mx-auto flex max-w-8xl items-center justify-center p-8 text-offWhite uppercase transition-all duration-300 ease-in-out"
@@ -164,8 +202,8 @@
         >
           <div class="hidden md:flex md:gap-x-12 text-xl font-bold">
             <a href="#inicio" class="leading-6">inicio</a>
-            <a href="#detalles" class="leading-6">servicios</a>
-            <a href="#galeria" class="leading-6">galería</a>
+            <a href="#servicios" class="leading-6">servicios</a>
+            <a href="#nosotros" class="leading-6">nosotros</a>
             <a href="#preguntas" class="leading-6">preguntas</a>
             <a href="#contacto" class="leading-6">contacto</a>
           </div>
@@ -177,7 +215,7 @@
       class="grid grid-cols-1 md:grid-cols-3 place-items-center bg-white px-6 py-8 sm:py-16 lg:px-8 max-w-8xl"
     >
       <div
-        class="md:col-span-3 bg-orange grid grid-cols-1 md:grid-cols-3 place-items-center p-0"
+        class="md:col-span-3 bg-orange grid grid-cols-1 md:grid-cols-3 place-items-center p-0 fadeIn-on-scroll opacity-0"
       >
         <div
           class="col-span-2 flex flex-col justify-center items-center text-center uppercase text-xl mx-2"
@@ -214,14 +252,17 @@
         </div>
       </div>
       <div
-        class="md:col-span-3 uppercase text-center text-6xl font-black my-6 mt-10 tracking-wide"
+        id="servicios"
+        class="md:col-span-3 uppercase text-center text-6xl font-black my-6 mt-10 tracking-wide fadeIn-on-scroll opacity-0"
       >
         <h1>nuestros servicios</h1>
       </div>
       <div
         class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 place-items-center gap-8 my-6"
       >
-        <div class="flex flex-col justify-center items-center">
+        <div
+          class="flex flex-col justify-center items-center fadeIn-on-scroll opacity-0"
+        >
           <!-- Imagen de instalación -->
           <div>
             <img
@@ -250,7 +291,9 @@
           </div>
         </div>
 
-        <div class="flex flex-col justify-center items-center">
+        <div
+          class="flex flex-col justify-center items-center fadeIn-on-scroll opacity-0"
+        >
           <!-- Imagen de instalación -->
           <div>
             <img
@@ -279,7 +322,9 @@
           </div>
         </div>
 
-        <div class="flex flex-col justify-center items-center">
+        <div
+          class="flex flex-col justify-center items-center fadeIn-on-scroll opacity-0"
+        >
           <!-- Imagen de instalación -->
           <div>
             <img
@@ -332,7 +377,9 @@
       <div
         class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 place-items-center m-4 my-6 gap-6 md:gap-12 text-offWhite text-center z-40 relative"
       >
-        <div class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl">
+        <div
+          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl fadeIn-on-scroll opacity-0"
+        >
           <h3 class="text-2xl font-bold">
             Mantenimiento preventivo y correctivo
           </h3>
@@ -343,7 +390,9 @@
             útil de los equipos.
           </p>
         </div>
-        <div class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl">
+        <div
+          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl fadeIn-on-scroll opacity-0"
+        >
           <h3 class="text-2xl font-bold">Venta de repuestos y reparación</h3>
           <p class="text-lg mt-2">
             Contamos con repuestos de marcas reconocidas y realizamos
@@ -352,7 +401,7 @@
           </p>
         </div>
         <div
-          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl relative z-20"
+          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl relative fadeIn-on-scroll opacity-0"
         >
           <h3 class="text-2xl font-bold">Asesoría en la elección de equipos</h3>
           <p class="text-lg mt-2">
@@ -362,7 +411,7 @@
           </p>
         </div>
         <div
-          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl relative z-20"
+          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl relative fadeIn-on-scroll opacity-0"
         >
           <h3 class="text-2xl font-bold">Asesoría en la elección de equipos</h3>
           <p class="text-lg mt-2">
@@ -376,7 +425,7 @@
 
       <!-- Contenedor del botón de contacto -->
       <div
-        class="md:col-span-2 flex flex-col justify-center items-center text-center m-4 z-30 bg-offWhite p-8 absolute bottom-0 transform translate-y-1/2 max-h-32 w-full p-16 pt-48"
+        class="md:col-span-2 flex flex-col justify-center items-center text-center m-4 z-30 bg-offWhite p-8 absolute bottom-0 transform translate-y-1/2 max-h-32 w-full p-16 pt-48 fadeIn-on-scroll opacity-0"
       >
         <button class="mt-10">
           <a
@@ -399,17 +448,17 @@
       <img
         src="images/brand_1.png"
         alt="logo CIAC"
-        class="max-h-64 w-auto object-cover"
+        class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
       />
       <img
         src="images/brand_2.png"
         alt="logo daikin"
-        class="max-h-64 w-auto object-cover"
+        class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
       />
       <img
         src="images/brand_3.png"
         alt="logo adina"
-        class="max-h-64 w-auto object-cover"
+        class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
       />
       <div
         class="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 place-items-center"
@@ -417,28 +466,28 @@
         <img
           src="images/brand_4.png"
           alt="logo e cold"
-          class="max-h-64 w-auto object-cover"
+          class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
         />
         <img
           src="images/brand_5.png"
           alt="logo g air"
-          class="max-h-64 w-auto object-cover"
+          class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
         />
       </div>
       <img
         src="images/product_1.png"
         alt="Imagen producto Daikin "
-        class="max-h-64 w-auto object-cover"
+        class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
       />
       <img
         src="images/product_2.png"
         alt="imagen producto G-Air"
-        class="max-h-64 w-auto object-cover"
+        class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
       />
       <img
         src="images/product_3.png"
         alt="imagen producto E-Cold"
-        class="max-h-64 w-auto object-cover"
+        class="max-h-64 w-auto object-cover fadeIn-on-scroll opacity-0"
       />
     </div>
 
@@ -447,11 +496,13 @@
       class="grid min-h-full place-items-center bg-darkBlue px-6 py-8 sm:py-12 lg:px-8"
     >
       <div
-        class="text-center text-offWhite uppercase fadeIn-on-scroll opacity-0 bg-orange px-8 py-6"
+        class="text-center text-offWhite uppercase fadeIn-on-scroll opacity-0 bg-orange px-8 py-6 fadeIn-on-scroll opacity-0"
       >
-        <h1 class="text-6xl font-bold">nosotros</h1>
+        <h1 class="text-4xl md:text-6xl font-bold">nosotros</h1>
       </div>
-      <div class="text-center text-offWhite max-w-4xl m-6 text-xl">
+      <div
+        class="text-center text-offWhite max-w-4xl m-6 text-xl fadeIn-on-scroll opacity-0"
+      >
         <p class="m-4">
           Tenemos 10 años de experiencia, comprometidos con ofrecer soluciones
           confiables y de alta calidad en climatización y refrigeración.
@@ -473,9 +524,9 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-full place-items-center bg-offWhite p-6 sm:py-12 lg:px-8 gap-2"
     >
       <div
-        class="md:col-span-2 lg:col-span-3 uppercase bg-orange text-center text-offWhite px-8 py-6 mb-8"
+        class="md:col-span-2 lg:col-span-3 uppercase bg-orange text-center text-offWhite px-8 py-6 mb-8 fadeIn-on-scroll opacity-0"
       >
-        <h1 class="text-6xl font-bold">nuestros trabajos</h1>
+        <h1 class="text-4xl md:text-6xl font-bold">nuestros trabajos</h1>
       </div>
       <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
         <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
@@ -549,7 +600,9 @@
           />
         </div>
       </div>
-      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0 md:hidden lg:flex">
+      <div
+        class="w-full flex justify-center fadeIn-on-scroll opacity-0 md:hidden lg:flex"
+      >
         <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
           <img
             class="w-full h-full object-cover"
@@ -563,12 +616,12 @@
     <div
       id="preguntas"
       style="background-image: url(images/background_2.jpg)"
-      class="relative flex items-center justify-center text-2xl text-offWhite bg-offWhite uppercase fadeIn-on-scroll opacity-0 min-w-full text-center py-8"
+      class="relative flex items-center justify-center text-2xl text-offWhite bg-offWhite uppercase fadeIn-on-scroll opacity-0 min-w-full text-center py-8 bg-fixed"
     >
       <div class="min-w-full absolute inset-0 bg-darkBlue/75 z-0"></div>
       <!-- Espacio horizontal entre los elementos -->
       <div class="z-10">
-        <h1 class="text-6xl font-bold">Preguntas frecuentes</h1>
+        <h1 class="text-4xl md:text-6xl font-bold">Preguntas frecuentes</h1>
       </div>
     </div>
 
@@ -616,9 +669,8 @@
           ¿Qué señales indican que mi aire acondicionado necesita mantenimiento?
         </h1>
         <p class="text-lg">
-          Si nota un aumento en el consumo energético, ruidos extraños, falta de
-          refrigeración o derrames de agua, es hora de programar un
-          mantenimiento.
+          Si nota un aumento en el consumo energético, ruidos extraños, no
+          enfría o derrama agua, es hora de programar un mantenimiento.
         </p>
       </div>
       <div class="w-full fadeIn-on-scroll opacity-0">
@@ -626,8 +678,10 @@
           ¿Cuál es la vida útil promedio de un aire acondicionado?
         </h1>
         <p class="text-lg">
-          La vida útil de un aire acondicionado suele ser de 10 a 15 años,
-          dependiendo del tipo y del mantenimiento que reciba.
+          La vida útil de un aire acondicionado suele ser de 7 años con
+          mantenimiento y bajo condiciones ambientales normales, cerca de la
+          costa dura 2 años, dependiendo del tipo y del mantenimiento que
+          reciba.
         </p>
       </div>
       <div class="w-full fadeIn-on-scroll opacity-0">
@@ -650,7 +704,9 @@
           significativo y un funcionamiento más silencioso.
         </p>
       </div>
-      <div class="md:col-span-2 lg:col-span-1 w-full fadeIn-on-scroll opacity-0">
+      <div
+        class="md:col-span-2 lg:col-span-1 w-full fadeIn-on-scroll opacity-0"
+      >
         <h1 class="uppercase font-semibold text-xl text-blue my-2">
           ¿Cómo puedo programar un mantenimiento?
         </h1>
@@ -659,48 +715,181 @@
           para programar una cita de mantenimiento.
         </p>
       </div>
-      <div
-        class="flex flex-col w-full md:col-span-2 lg:col-span-3 fadeIn-on-scroll opacity-0"
-      >
-        <h1 class="font-serif uppercase text-5xl text-lightGreen">
-          Déjanos un mensaje
-        </h1>
-        <form
-          id="mensaje"
-          class="flex flex-col justify-center items-center"
-          method="post"
-        >
-          <textarea
-            id="message"
-            class="rounded-2xl px-4 m-4 border border-gray-300 w-full max-w-xl"
-            rows="4"
-            placeholder="Indica tu nombre al escribir tu mensaje aquí... "
-            required
-          ></textarea>
+    </div>
 
-          <!-- Botón de envío -->
+    <div
+      id="contacto"
+      class="flex justify-center items-center min-h-full bg-darkBlue p-6 sm:py-12 lg:px-8 gap-2"
+    >
+      <form
+        class="flex flex-col justify-center items-center fadeIn-on-scroll opacity-0"
+      >
+        <h1
+          class="uppercase font-bold text-4xl md:text-6xl text-offWhite my-6 text-center"
+        >
+          Escribe un mensaje
+        </h1>
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center min-w-full"
+        >
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Nombre completo"
+            required
+            class="w-full"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+            class="w-full"
+          />
+          <input
+            type="text"
+            name="telefono"
+            id="telefono"
+            placeholder="Teléfono"
+            required
+            class="w-full"
+          />
+          <div class="md:col-span-3 w-full">
+            <textarea
+              name="mensaje"
+              id="mensaje"
+              placeholder="Escribe su consulta"
+              required
+              class="w-full h-40 md:h-56 lg:h-64 px-3 py-2"
+            ></textarea>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="uppercase font-semibold text-white px-4 py-2 m-4 bg-orange text-xl"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+
+      <!-- Indicador de carga -->
+      <div
+        id="loadingMessage"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+      >
+        <p class="text-white text-xl font-bold">Enviando...</p>
+      </div>
+
+      <div
+        id="successModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+      >
+        <div
+          class="relative bg-white p-6 rounded-lg max-w-md w-full text-center m-4"
+        >
+          <h2 class="text-xl font-bold">¡Mensaje Enviado!</h2>
+          <p>Tu mensaje ha sido enviado con éxito. Pronto te contactaremos.</p>
           <button
-            type="submit"
-            class="bg-green text-offWhite p-4 my-2 uppercase"
+            id="closeSuccessModal"
+            class="mt-4 bg-orange text-white px-4 py-2 rounded"
           >
-            enviar
+            Cerrar
           </button>
-        </form>
+        </div>
       </div>
     </div>
 
     <footer>
       <div
-        class="bg-darkBlue text-offWhite text-xl text-center p-6 fadeIn-on-scroll opacity-0"
+        class="flex justify-center items-center bg-darkBlue text-offWhite text-xl text-center p-6"
       >
-        <p>
-          <small class="block"
-            ><a href="https://github.com/SamusCreations" target="_blank"
-              >SamusCreations</a
-            >
-            &copy; 2024 All Rights Reserved.</small
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 min-w-full max-w-4xl gap-y-6"
+        >
+          <div
+            class="flex justify-center text-center items-center gap-2 fadeIn-on-scroll opacity-0"
           >
-        </p>
+            <a
+              href="https://wa.me/50687512896"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="images/whatsapp.png" alt="" class="h-10 w-auto"
+            /></a>
+            <a
+              href="https://wa.me/50687512896"
+              target="_blank"
+              rel="noopener noreferrer"
+              >+506 8751 2896</a
+            >
+          </div>
+          <div
+            class="flex justify-center text-center items-center gap-2 fadeIn-on-scroll opacity-0"
+          >
+            <img
+              src="svg/Phone.svg"
+              alt=""
+              class="h-10 w-auto bg-offWhite rounded-full"
+            />
+            <div class="flex flex-col">
+              <p>+506 2450 1406</p>
+              <p>+506 2100 9248</p>
+            </div>
+          </div>
+          <div
+            class="flex justify-center text-center items-center gap-2 fadeIn-on-scroll opacity-0"
+          >
+            <a
+              href="https://www.facebook.com/uniclimadeoccidentesa?mibextid=ZbWKwL"
+              rel="noopener noreferrer"
+              target="_blank"
+              ><img src="images/facebook.png" alt="" class="h-8 w-auto"
+            /></a>
+            <a
+              href="https://www.facebook.com/uniclimadeoccidentesa?mibextid=ZbWKwL"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Uniclima de Occidente S.A.</a
+            >
+          </div>
+          <div
+            class="flex justify-center text-center items-center gap-2 fadeIn-on-scroll opacity-0"
+          >
+            <a href="mailto:uniclimadeoccidente@gmail.com"
+              ><img
+                src="svg/Mail.svg"
+                alt=""
+                class="h-10 w-auto bg-offWhite rounded-full"
+            /></a>
+            <a href="mailto:uniclimadeoccidente@gmail.com"
+              >uniclimadeoccidente@gmail.com</a
+            >
+          </div>
+          <div
+            class="md:col-span-2 flex flex-col justify-center text-center items-center gap-y-6 fadeIn-on-scroll opacity-0"
+          >
+            <p>
+              Bendito el hombre que confía en Jehová, y cuya confianza es
+              Jehová. Jer.17:7
+            </p>
+            <div class="text-center">
+              <p class="text-lg text-gray-400 tracking-tighter">
+                Developed by
+                <a
+                  href="https://github.com/SamusCreations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-bold"
+                  >SamusCreations</a
+                >
+              </p>
+              <p class="text-lg text-gray-400 tracking-tighter">
+                Copyright © 2024 Uniclima de Occidente S.A.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- Main -->

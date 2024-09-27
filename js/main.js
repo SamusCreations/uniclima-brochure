@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleScroll() {
     const navWrapperRect = navWrapper.getBoundingClientRect();
-    
+
     if (navWrapperRect.top <= 0) {
       navbar.classList.add(...stickyClass.split(" "));
     } else {
@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll);
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const openMenuBtn = document.getElementById("openMenuBtn");
@@ -109,67 +108,105 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Inicializar EmailJS
-emailjs.init({
-  publicKey: "CaMtCOGGOlFWE2dXC",
+// Función para mostrar el modal al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("modal");
+  const closeModalBtn = document.getElementById("closeModal");
+  const goToContactForm = document.getElementById("goToContactForm");
+
+  // Función para deshabilitar el scroll
+  function disableScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  // Función para habilitar el scroll
+  function enableScroll() {
+    document.body.style.overflow = "auto";
+  }
+
+  // Mostrar el modal automáticamente al cargar la página
+  modal.classList.remove("hidden");
+  modal.classList.add("fadeIn-on-scroll");
+  modal.classList.remove("opacity-0");
+
+  // Deshabilitar el scroll cuando el modal esté visible
+  disableScroll();
+
+  // Cerrar el modal cuando se haga clic en la 'X'
+  closeModalBtn.addEventListener("click", function () {
+    modal.classList.add("hidden");
+    enableScroll(); // Habilitar el scroll al cerrar el modal
+  });
+
+  // Redirigir al formulario de contacto y cerrar el modal
+  goToContactForm.addEventListener("click", function () {
+    window.location.href = "#contacto"; // Redirige al formulario de contacto
+    modal.classList.add("hidden"); // Cerrar modal después de redirigir
+    enableScroll(); // Habilitar el scroll después de cerrar el modal
+  });
 });
 
-// RSVP Form
-document
-  .getElementById("rsvpForm")
-  .addEventListener("submit", function (event) {
+// Inicializar EmailJS
+emailjs.init({
+  publicKey: "RXbp7xnZqthqtS66z",
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleccionar el formulario
+  const form = document.querySelector("form");
+  const successModal = document.getElementById("successModal");
+  const closeSuccessModal = document.getElementById("closeSuccessModal");
+  const loadingMessage = document.getElementById("loadingMessage");
+
+  // Manejar el envío del formulario
+  form.addEventListener("submit", function (event) {
     event.preventDefault(); // Evitar que se recargue la página
 
-    // Obtener los valores del formulario
-    const name = document.getElementById("name").value;
-    const attendance = document.querySelector(
-      'input[name="attendance"]:checked'
-    ).value;
+    // Mostrar mensaje de "Enviando..."
+    loadingMessage.classList.remove("hidden");
 
-    // Configurar los parámetros del email
+    // Obtener los valores del formulario
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const telefono = document.getElementById("telefono").value;
+    const mensaje = document.getElementById("mensaje").value;
+
+    // Configurar los parámetros para enviar con EmailJS
     const templateParams = {
-      from_name: name,
-      attendance: attendance,
-      message: `Confirmación de asistencia de ${attendance}`,
+      nombre: nombre,
+      email: email,
+      telefono: telefono,
+      mensaje: mensaje,
     };
 
-    // Enviar el correo usando EmailJS
+    // Enviar el correo utilizando EmailJS
     emailjs
-      .send("service_f7sxcyp", "template_5f05e55", templateParams)
+      .send("service_5ox9nyo", "template_v1u5ojf", templateParams)
       .then(function (response) {
         console.log("SUCCESS!", response.status, response.text);
 
-        // Mostrar mensaje de éxito
-        alert("¡Gracias por confirmar tu asistencia!");
-        document.getElementById("rsvpForm").reset();
+        // Ocultar el mensaje de carga
+        loadingMessage.classList.add("hidden");
+
+        // Mostrar el modal de éxito
+        successModal.classList.remove("hidden");
+
+        // Reiniciar el formulario
+        form.reset(); // Reinicia el formulario después de enviar
       })
       .catch(function (error) {
         console.error("FAILED...", error);
+
+        // Ocultar el mensaje de carga si hay un error
+        loadingMessage.classList.add("hidden");
+
+        // Mostrar mensaje de error
+        alert("Ocurrió un error al enviar el mensaje. Intenta de nuevo.");
       });
   });
 
-// Message Form
-document.getElementById("mensaje").addEventListener("submit", function (event) {
-  event.preventDefault(); // Evita el comportamiento por defecto del formulario
-
-  const message = document.getElementById("message").value;
-
-  // Configurar los parámetros del email
-  const templateParams = {
-    message: message,
-  };
-
-  // Envia el formulario usando EmailJS
-  emailjs.send("service_f7sxcyp", "template_yptbq66", templateParams).then(
-    function (response) {
-      console.log("Success:", response);
-      alert("Mensaje enviado con éxito");
-      document.getElementById("mensaje").reset();
-    },
-    function (error) {
-      console.error("Error:", error);
-      alert("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
-    }
-  );
+  // Manejar el cierre del modal
+  closeSuccessModal.addEventListener("click", function () {
+    successModal.classList.add("hidden");
+  });
 });
-
