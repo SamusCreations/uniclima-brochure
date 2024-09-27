@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "LouisGeorgeCafe";
+    src: url("/fonts/LouisGeorgeCafe.ttf") format("opentype"); /* O 'woff', 'woff2', etc. según el formato */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "LouisGeorgeCafeLight";
+    src: url("/fonts/LouisGeorgeCafeLight.ttf") format("opentype"); /* O 'woff', 'woff2', etc. según el formato */
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+html {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  scroll-behavior: smooth;
+}
+

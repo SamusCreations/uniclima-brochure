@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Uniclima de Occidente S.A. | Soluciones de climatización a su alcance
+    </title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <header
+      class="bg-blue fixed top-0 left-0 right-0 z-50 fadeIn-on-scroll opacity-0 md:hidden"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:py-1 text-offWhite uppercase"
+        aria-label="Global"
+      >
+        <div class="flex md:flex-1">
+          <a href="#inicio">
+            <span class="sr-only">Uniclima de Occidente S.A.</span>
+            <img
+              class="h-14 w-auto"
+              src="/images/logo_3.png"
+              alt="logo de Uniclima de Occidente"
+            />
+          </a>
+        </div>
+        <div class="flex md:hidden">
+          <button
+            id="openMenuBtn"
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-offWhite"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden fixed inset-0 z-10 uppercase bg-blue text-offWhite transition-transform duration-300 transform translate-x-full text-xl animate-slideIn"
+      >
+        <div class="fixed inset-0 z-10 bg-gray-900 opacity-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-green px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
+          <div class="flex items-center justify-between">
+            <a href="#inicio" class="-m-1.5 p-1.5">
+              <span class="sr-only">La boda de JuanPa & Raque</span>
+              <img
+                class="h-14 w-auto"
+                src="/images/logo_3.png"
+                alt="logo de Uniclima de Occidente"
+              />
+            </a>
+            <button
+              id="closeMenuBtn"
+              type="button"
+              class="-m-2.5 rounded-md p-2.5"
+            >
+              <span class="sr-only">Close menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  href="#inicio"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  >inicio</a
+                >
+                <a
+                  href="#detalles"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  >servicios</a
+                >
+                <a
+                  href="#rsvp"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  >galería</a
+                >
+                <a
+                  href="#nosotros"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  >preguntas</a
+                >
+                <a
+                  href="#galeria"
+                  class="-mx-3 block rounded-lg px-3 py-2 leading-7 hover:bg-white hover:"
+                  >contacto</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="inicio"
+      style="background-image: url(images/background_1.jpg)"
+      class="relative grid grid-row min-h-svh bg-no-repeat bg-center bg-cover bg-fixed text-offWhite px-6 py-24 sm:py-32 lg:px-8"
+    >
+      <div class="min-h-svh absolute inset-0 bg-black/75 z-0"></div>
+      <div class="absolute m-6 z-10">
+        <img class="h-10" src="/images/logo_2.png" alt="" />
+      </div>
+      <div
+        class="flex justify-center flex-col text-6xl items-center text-center uppercase font-bold z-10 fadeIn-on-scroll"
+      >
+        <h1>¿Dónde estamos?</h1>
+        <h1>Donde usted nos <span class="text-orange">necesite</span></h1>
+        <button class="m-4">
+          <a href="#contacto" class="p-4 bg-orange text-4xl uppercase"
+            >Contáctanos</a
+          >
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-blue hidden md:block" id="navWrapper">
+      <div id="navbar">
+        <nav
+          class="mx-auto flex max-w-8xl items-center justify-center p-8 text-offWhite uppercase transition-all duration-300 ease-in-out"
+          aria-label="Global"
+        >
+          <div class="hidden md:flex md:gap-x-12 text-xl font-bold">
+            <a href="#inicio" class="leading-6">inicio</a>
+            <a href="#detalles" class="leading-6">servicios</a>
+            <a href="#galeria" class="leading-6">galería</a>
+            <a href="#preguntas" class="leading-6">preguntas</a>
+            <a href="#contacto" class="leading-6">contacto</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 place-items-center bg-white px-6 py-8 sm:py-16 lg:px-8 max-w-8xl"
+    >
+      <div
+        class="md:col-span-3 bg-orange grid grid-cols-1 md:grid-cols-3 place-items-center p-0"
+      >
+        <div
+          class="col-span-2 flex flex-col justify-center items-center text-center uppercase text-xl mx-2"
+        >
+          <div class="fadeIn-on-scroll opacity-0 bg-orange text-offWhite p-10">
+            <h1 class="font-bold text-4xl md:text-6xl pb-4">
+              UNICLIMA DE OCCIDENTE S.A.
+            </h1>
+            <h3 class="font-bold text-2xl pb-4">
+              Soluciones de climatización a su alcance…
+            </h3>
+
+            <p class="text-xl normal-case">
+              Somos una pequeña empresa dedicada a la venta de equipos y
+              repuestos para aire acondicionado y refrigeración en cualquier
+              parte del país.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white flex flex-col justify-center items-center w-full fadeIn-on-scroll opacity-0 gap-6 py-6 min-h-full"
+        >
+          <img
+            class="w-full max-w-xl h-auto object-cover"
+            src="/images/logo_1.png"
+            alt="logo Uniclima de Occidente S.A."
+          />
+          <img
+            class="max-w-24 h-auto object-cover"
+            src="/svg/pyme_logo.svg"
+            alt="logo Pymes Costa Rica"
+          />
+        </div>
+      </div>
+      <div
+        class="md:col-span-3 uppercase text-center text-6xl font-black my-6 mt-10 tracking-wide"
+      >
+        <h1>nuestros servicios</h1>
+      </div>
+      <div
+        class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 place-items-center gap-8 my-6"
+      >
+        <div class="flex flex-col justify-center items-center">
+          <!-- Imagen de instalación -->
+          <div>
+            <img
+              src="images/instalacion.jpg"
+              alt=""
+              class="max-h-72 w-full object-cover"
+            />
+          </div>
+
+          <!-- Descripción debajo -->
+          <div class="relative bg-orange p-4 text-offWhite">
+            <div
+              class="absolute -top-16 left-1/2 transform -translate-x-1/2 text-blue rounded-full bg-white p-4"
+            >
+              <div class="w-20 h-20">
+                <img
+                  src="svg/holding_gear.svg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <h2 class="text-2xl text-center mt-8">
+              Venta e instalación de equipos A/C
+            </h2>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center">
+          <!-- Imagen de instalación -->
+          <div>
+            <img
+              src="images/mantenimiento.jpg"
+              alt=""
+              class="max-h-72 w-full object-cover"
+            />
+          </div>
+
+          <!-- Descripción debajo -->
+          <div class="relative bg-orange p-4 text-offWhite">
+            <div
+              class="absolute -top-16 left-1/2 transform -translate-x-1/2 text-blue rounded-full bg-white p-4"
+            >
+              <div class="w-20 h-20">
+                <img
+                  src="svg/wrench_gear.svg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <h2 class="text-2xl text-center mt-8">
+              Mantenimiento y reparación, de equipos A/C
+            </h2>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center">
+          <!-- Imagen de instalación -->
+          <div>
+            <img
+              src="images/venta.jpg"
+              alt=""
+              class="max-h-72 w-full object-cover"
+            />
+          </div>
+
+          <!-- Descripción debajo -->
+          <div class="relative bg-orange p-4 text-offWhite">
+            <div
+              class="absolute -top-16 left-1/2 transform -translate-x-1/2 text-blue rounded-full bg-white p-4"
+            >
+              <div class="w-20 h-20">
+                <img
+                  src="svg/gear.svg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <h2 class="text-2xl text-center mt-8">
+              Venta de repuestos de A/C y refrigeración
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="background-image: url(images/background_2.jpg)"
+      class="relative grid grid-cols-1 md:grid-cols-2 place-items-center min-h-full bg-no-repeat bg-center bg-cover text-offWhite px-6 pt-16 sm:pt-24 pb-0 lg:px-8"
+    >
+      <div class="min-h-full absolute inset-0 bg-darkBlue/75 z-0"></div>
+
+      <!-- Título principal y flecha -->
+      <div
+        class="md:col-span-2 flex justify-center flex-col text-4xl items-center text-center uppercase font-bold z-10 fadeIn-on-scroll"
+      >
+        <h1 class="tracking-wide">
+          Servicios de Climatización y Refrigeración
+        </h1>
+        <div class="my-8">
+          <img src="images/arrow.png" alt="" class="h-16" />
+        </div>
+      </div>
+
+      <!-- Cuadros de información -->
+      <div
+        class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 place-items-center m-4 my-6 gap-6 md:gap-12 text-offWhite text-center z-40 relative"
+      >
+        <div class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl">
+          <h3 class="text-2xl font-bold">
+            Mantenimiento preventivo y correctivo
+          </h3>
+          <p class="text-lg mt-2">
+            Ofrecemos mantenimiento para equipos de aire acondicionado y
+            refrigeración, asegurando un rendimiento óptimo y evitando averías.
+            Recomendamos un mantenimiento cada tres meses para prolongar la vida
+            útil de los equipos.
+          </p>
+        </div>
+        <div class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl">
+          <h3 class="text-2xl font-bold">Venta de repuestos y reparación</h3>
+          <p class="text-lg mt-2">
+            Contamos con repuestos de marcas reconocidas y realizamos
+            reparaciones especializadas para diferentes sistemas de
+            climatización y refrigeración.
+          </p>
+        </div>
+        <div
+          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl relative z-20"
+        >
+          <h3 class="text-2xl font-bold">Asesoría en la elección de equipos</h3>
+          <p class="text-lg mt-2">
+            Le ayudamos a elegir el equipo ideal según las características de su
+            espacio. La tecnología Inverter es una excelente opción por su
+            eficiencia y ahorro energético.
+          </p>
+        </div>
+        <div
+          class="bg-darkBlue p-8 min-h-full min-w-full max-w-2xl relative z-20"
+        >
+          <h3 class="text-2xl font-bold">Asesoría en la elección de equipos</h3>
+          <p class="text-lg mt-2">
+            Contamos con marcas reconocidas a nivel mundial, que integran
+            tecnología avanzada, como la capacidad de controlar su aire
+            acondicionado desde su móvil, permitiendo encenderlo o apagarlo a
+            distancia para mayor comodidad y eficiencia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contenedor del botón de contacto -->
+      <div
+        class="md:col-span-2 flex flex-col justify-center items-center text-center m-4 z-30 bg-offWhite p-8 absolute bottom-0 transform translate-y-1/2 max-h-32 w-full p-16 pt-48"
+      >
+        <button class="mt-10">
+          <a
+            href="#contacto"
+            class="p-4 bg-orange font-bold uppercase text-offWhite text-2xl"
+          >
+            Contáctanos
+          </a>
+        </button>
+        <p class="text-black font-bold font-custom my-8 text-xl">
+          Algunas de las marcas líderes con las que trabajamos, garantizando
+          calidad y tecnología avanzada
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 place-items-center bg-offWhite px-6 py-8 pt-32 sm:py-32 lg:px-8 gap-6 gap-y-10"
+    >
+      <img
+        src="images/brand_1.png"
+        alt="logo CIAC"
+        class="max-h-64 w-auto object-cover"
+      />
+      <img
+        src="images/brand_2.png"
+        alt="logo daikin"
+        class="max-h-64 w-auto object-cover"
+      />
+      <img
+        src="images/brand_3.png"
+        alt="logo adina"
+        class="max-h-64 w-auto object-cover"
+      />
+      <div
+        class="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 place-items-center"
+      >
+        <img
+          src="images/brand_4.png"
+          alt="logo e cold"
+          class="max-h-64 w-auto object-cover"
+        />
+        <img
+          src="images/brand_5.png"
+          alt="logo g air"
+          class="max-h-64 w-auto object-cover"
+        />
+      </div>
+      <img
+        src="images/product_1.png"
+        alt="Imagen producto Daikin "
+        class="max-h-64 w-auto object-cover"
+      />
+      <img
+        src="images/product_2.png"
+        alt="imagen producto G-Air"
+        class="max-h-64 w-auto object-cover"
+      />
+      <img
+        src="images/product_3.png"
+        alt="imagen producto E-Cold"
+        class="max-h-64 w-auto object-cover"
+      />
+    </div>
+
+    <div
+      id="nosotros"
+      class="grid min-h-full place-items-center bg-darkBlue px-6 py-8 sm:py-12 lg:px-8"
+    >
+      <div
+        class="text-center text-offWhite uppercase fadeIn-on-scroll opacity-0 bg-orange px-8 py-6"
+      >
+        <h1 class="text-6xl font-bold">nosotros</h1>
+      </div>
+      <div class="text-center text-offWhite max-w-4xl m-6 text-xl">
+        <p class="m-4">
+          Tenemos 10 años de experiencia, comprometidos con ofrecer soluciones
+          confiables y de alta calidad en climatización y refrigeración.
+        </p>
+        <p class="m-4">
+          Estamos certificados como MICROPYME, incorporados al CFIA y con
+          certificación SAO-MINAE, lo que respalda nuestra experiencia y
+          dedicación al cliente.
+        </p>
+        <p class="m-4">
+          Nuestro objetivo es brindar un servicio personalizado que se adapte a
+          las necesidades de cada cliente, garantizando su satisfacción en cada
+          proyecto.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-full place-items-center bg-offWhite p-6 sm:py-12 lg:px-8 gap-2"
+    >
+      <div
+        class="md:col-span-2 lg:col-span-3 uppercase bg-orange text-center text-offWhite px-8 py-6 mb-8"
+      >
+        <h1 class="text-6xl font-bold">nuestros trabajos</h1>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_1.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_2.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_3.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_4.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_5.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_6.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_7.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_8.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full flex justify-center fadeIn-on-scroll opacity-0 md:hidden lg:flex">
+        <div class="w-full max-w-lg aspect-w-1 aspect-h-1">
+          <img
+            class="w-full h-full object-cover"
+            src="images/picture_9.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="preguntas"
+      style="background-image: url(images/background_2.jpg)"
+      class="relative flex items-center justify-center text-2xl text-offWhite bg-offWhite uppercase fadeIn-on-scroll opacity-0 min-w-full text-center py-8"
+    >
+      <div class="min-w-full absolute inset-0 bg-darkBlue/75 z-0"></div>
+      <!-- Espacio horizontal entre los elementos -->
+      <div class="z-10">
+        <h1 class="text-6xl font-bold">Preguntas frecuentes</h1>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-full place-items-center bg-offWhite p-6 sm:py-12 lg:px-8 gap-12 text-center tracking-tight"
+    >
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-bold text-xl text-blue my-2">
+          ¿Por qué es importante el mantenimiento preventivo?
+        </h1>
+        <p class="text-lg">
+          El mantenimiento preventivo evita averías y problemas como
+          obstrucciones en el drenaje, que pueden causar derrames de agua.
+          Factores como la contaminación ambiental pueden acelerar el desgaste
+          de los equipos.
+        </p>
+      </div>
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Cada cuánto tiempo se debe realizar el mantenimiento?
+        </h1>
+        <p class="text-lg">
+          Se recomienda realizar el mantenimiento cada 3 meses para asegurar el
+          buen funcionamiento y prolongar la vida útil del equipo.
+        </p>
+      </div>
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿En qué consiste el mantenimiento preventivo?
+        </h1>
+        <p class="text-lg">
+          Incluye el desarme del equipo, limpieza general, lubricación, medición
+          eléctrica y de presiones, aplicación de pintura impermeabilizante en
+          el aislante expuesto y un reporte técnico con recomendaciones.
+        </p>
+      </div>
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Cuánto tiempo tarda el mantenimiento?
+        </h1>
+        <p class="text-lg">El proceso dura aproximadamente 1 hora.</p>
+      </div>
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Qué señales indican que mi aire acondicionado necesita mantenimiento?
+        </h1>
+        <p class="text-lg">
+          Si nota un aumento en el consumo energético, ruidos extraños, falta de
+          refrigeración o derrames de agua, es hora de programar un
+          mantenimiento.
+        </p>
+      </div>
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Cuál es la vida útil promedio de un aire acondicionado?
+        </h1>
+        <p class="text-lg">
+          La vida útil de un aire acondicionado suele ser de 10 a 15 años,
+          dependiendo del tipo y del mantenimiento que reciba.
+        </p>
+      </div>
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Qué incluye el servicio de mantenimiento preventivo?
+        </h1>
+        <p class="text-lg">
+          Incluye limpieza general, lubricación de piezas, revisión eléctrica y
+          de presiones, así como un reporte técnico con recomendaciones.
+        </p>
+      </div>
+
+      <div class="w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Qué es la tecnología Inverter y por qué debería considerarla?
+        </h1>
+        <p class="text-lg">
+          La tecnología Inverter ajusta la velocidad del compresor según la
+          demanda de refrigeración, lo que resulta en un ahorro energético
+          significativo y un funcionamiento más silencioso.
+        </p>
+      </div>
+      <div class="md:col-span-2 lg:col-span-1 w-full fadeIn-on-scroll opacity-0">
+        <h1 class="uppercase font-semibold text-xl text-blue my-2">
+          ¿Cómo puedo programar un mantenimiento?
+        </h1>
+        <p class="text-lg">
+          Puede contactarnos a través de nuestro sitio web, WhatsApp o Facebook
+          para programar una cita de mantenimiento.
+        </p>
+      </div>
+      <div
+        class="flex flex-col w-full md:col-span-2 lg:col-span-3 fadeIn-on-scroll opacity-0"
+      >
+        <h1 class="font-serif uppercase text-5xl text-lightGreen">
+          Déjanos un mensaje
+        </h1>
+        <form
+          id="mensaje"
+          class="flex flex-col justify-center items-center"
+          method="post"
+        >
+          <textarea
+            id="message"
+            class="rounded-2xl px-4 m-4 border border-gray-300 w-full max-w-xl"
+            rows="4"
+            placeholder="Indica tu nombre al escribir tu mensaje aquí... "
+            required
+          ></textarea>
+
+          <!-- Botón de envío -->
+          <button
+            type="submit"
+            class="bg-green text-offWhite p-4 my-2 uppercase"
+          >
+            enviar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div
+        class="bg-darkBlue text-offWhite text-xl text-center p-6 fadeIn-on-scroll opacity-0"
+      >
+        <p>
+          <small class="block"
+            ><a href="https://github.com/SamusCreations" target="_blank"
+              >SamusCreations</a
+            >
+            &copy; 2024 All Rights Reserved.</small
+          >
+        </p>
+      </div>
+    </footer>
+    <!-- Main -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
