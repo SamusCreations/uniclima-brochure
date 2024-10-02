@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Función para mostrar el modal al cargar la página
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const closeModalBtn = document.getElementById("closeModal");
   const goToContactForm = document.getElementById("goToContactForm");
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.classList.add("hidden"); // Cerrar modal después de redirigir
     enableScroll(); // Habilitar el scroll después de cerrar el modal
   });
-});
+}); */
 
 // Inicializar EmailJS
 emailjs.init({
